@@ -8,6 +8,7 @@ for filename in os.listdir(dir_path):
         img = Image.open(filename)
         new_size = (1024, 576)
         img = img.resize(new_size)
-        new_filename = os.path.splitext(filename)[0] + '.webp'
+        new_filename = os.path.splitext('weekly')[0] + '.webp'
         img.save(new_filename, 'webp', lossless=False, quality=80)
+        os.remove(filename)
 print('Готово!')
