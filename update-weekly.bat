@@ -1,6 +1,8 @@
 @echo off
+git fetch --all
+git reset --hard origin/main
+git pull
 python shakalizer.py
-git reset --soft HEAD~
 git add weekly.webp
 git commit -m "updated weekly image via .bat file"
-git push -f
+git push
