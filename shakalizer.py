@@ -15,6 +15,6 @@ for filename in os.listdir(dir_path):
         sd_img.save(sd_filename, 'webp', lossless=False, quality=80)
         if hd_img.size[0] > 1920:
             hd_img = hd_img.resize(hd_img_size)
-        hd_img.save(hd_filename, 'webp', lossless=True, quality=100)
+        hd_img.save(hd_filename, 'webp', lossless=False, quality=99)
         os.remove(filename)
 print('Готово!')
