@@ -8,9 +8,11 @@ for filename in os.listdir(dir_path):
         sd_img = Image.open(filename)
         hd_img = Image.open(filename)
         sd_img = sd_img.resize(1024, 576)
-        sd_img.save(os.path.splitext('weekly')[0] + '.webp', 'webp', lossless=False, quality=80)
+        sd_filename = os.path.splitext('weekly')[0] + '.webp'
+        hd_filename = os.path.splitext('weeklyHD')[0] + '.webp'
+        sd_img.save(sd_filename, 'webp', lossless=False, quality=80)
         if hd_img.size[0] > 1920:
             hd_img = hd_img.resize(1920, 1080)
-        hd_img.save(os.path.splitext('weeklyHD')[0] + '.webp', 'webp', lossless=False, quality=100)
+        hd_img.save(hd_filename, 'webp', lossless=True, quality=100)
         os.remove(filename)
 print('Готово!')
